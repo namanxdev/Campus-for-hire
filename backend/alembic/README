@@ -1,0 +1,45 @@
+Campus-to-Hire Database Migrations
+==================================
+
+This directory contains Alembic database migration scripts for the Campus-to-Hire platform.
+
+## Quick Reference
+
+### Create a new migration
+```bash
+alembic revision --autogenerate -m "description of changes"
+```
+
+### Upgrade to latest version
+```bash
+alembic upgrade head
+```
+
+### Downgrade to previous version
+```bash
+alembic downgrade -1
+```
+
+### View current version
+```bash
+alembic current
+```
+
+### View migration history
+```bash
+alembic history
+```
+
+## Initial Setup
+
+1. Ensure your `.env` file has the correct `DATABASE_URL`
+2. Run initial migration:
+   ```bash
+   alembic upgrade head
+   ```
+
+## Important Notes
+
+- Always review auto-generated migrations before applying them
+- Test migrations on a backup database before running on production
+- Keep migrations backward-compatible when possible for zero-downtime deployments
